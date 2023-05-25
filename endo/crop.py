@@ -68,9 +68,9 @@ def crop_images(folder_number, output_size):
 
 if __name__ == "__main__":
 
-    folder_number = "06"
+    folder_number = "17"
 
-    output_size = [384,512]
+    output_size = [256,320]
 
     crop_images(folder_number, output_size)
  

@@ -38,7 +38,9 @@ vis = o3d.visualization.VisualizerWithKeyCallback()
 vis.create_window(height=540, width=960)
 
 
-for i in range(len(dimages)):
+for i in range(1):
+
+    i = 0
 
     color = o3d.io.read_image(limages[i])
     idepth = np.load(dimages[i])
@@ -62,7 +64,7 @@ for i in range(len(dimages)):
     vis.poll_events()
     vis.update_renderer()
     time.sleep(0.25)
-    if i >= 0:
+    if i < 0:
         vis.remove_geometry(target_pcd)
 
     
