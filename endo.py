@@ -75,4 +75,9 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
 
+    args.left_imgs = "/home/avinash/Desktop/datasets/endo/depth/rectified15/cropped/image01/*.jpg"
+    args.right_imgs = "/home/avinash/Desktop/datasets/endo/depth/rectified15/cropped/image02/*.jpg"
+    args.output_directory = "/home/avinash/Desktop/datasets/endo/depth/rectified15/cropped/depth01/"
+    args.save_numpy = True 
+
     demo(args)

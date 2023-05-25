@@ -6,7 +6,7 @@ import time
 import matplotlib.pyplot as plt
 
 
-folder_number = "01"
+folder_number = "15"
 
 folder = "/home/avinash/Desktop/datasets/endo/depth/rectified"+str(folder_number)+"/"
 
@@ -38,13 +38,13 @@ vis = o3d.visualization.VisualizerWithKeyCallback()
 vis.create_window(height=540, width=960)
 
 
-for i in range(100):
+for i in range(len(dimages)):
 
     color = o3d.io.read_image(limages[i])
     idepth = np.load(dimages[i])
 
     focal = K[0, 0]
-    depth = (focal*-b) / (idepth)
+    depth = (focal*b) / (idepth)
 
     depth = o3d.geometry.Image(depth)
 
@@ -62,7 +62,7 @@ for i in range(100):
     vis.poll_events()
     vis.update_renderer()
     time.sleep(0.25)
-    if i != 0:
+    if i >= 0:
         vis.remove_geometry(target_pcd)
 
     
